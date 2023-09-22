@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{3dc5d34f-1407-4f88-ad40-2af6efda9866}</ProjectGuid>
+    <RootNamespace>RayTracingApp</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\intermediates\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\intermediates\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\intermediates\$(Platform)\$(Configuration)\</IntDir>
+    <IncludePath>$(SolutionDIr)Dependencies\SDL2-2.28.1\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Dependencies\SDL2-2.28.1\lib\x64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)bin\intermediates\$(Platform)\$(Configuration)\</IntDir>
+    <IncludePath>$(SolutionDIr)Dependencies\SDL2-2.28.1\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Dependencies\SDL2-2.28.1\lib\x64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDIr)Dependencies\SDL2-2.28.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2test.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDIr)Dependencies\SDL2-2.28.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2test.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\SDL2-2.28.1\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2test.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\SDL2-2.28.1\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2test.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="SDL2.dll" />
+    <None Include="Source\SDL2.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\CApp.h" />
+    <ClInclude Include="Source\RayTrace\geotransform.h" />
+    <ClInclude Include="Source\RayTrace\Lights\lightbase.h" />
+    <ClInclude Include="Source\RayTrace\camera.h" />
+    <ClInclude Include="Source\RayTrace\image.h" />
+    <ClInclude Include="Source\RayTrace\Materials\materialbase.h" />
+    <ClInclude Include="Source\RayTrace\Materials\simplematerial.h" />
+    <ClInclude Include="Source\RayTrace\Materials\simplerefractive.h" />
+    <ClInclude Include="Source\RayTrace\Noise\grdnoisegenerator.h" />
+    <ClInclude Include="Source\RayTrace\Noise\noisebase.h" />
+    <ClInclude Include="Source\RayTrace\Noise\valnoisegenerator.h" />
+    <ClInclude Include="Source\RayTrace\Normals\constant.h" />
+    <ClInclude Include="Source\RayTrace\Normals\n_image.h" />
+    <ClInclude Include="Source\RayTrace\Normals\normalbase.h" />
+    <ClInclude Include="Source\RayTrace\Normals\simplerough.h" />
+    <ClInclude Include="Source\RayTrace\Normals\texturenormal.h" />
+    <ClInclude Include="Source\RayTrace\Primitives\box.h" />
+    <ClInclude Include="Source\RayTrace\Primitives\compositebase.h" />
+    <ClInclude Include="Source\RayTrace\Primitives\cone.h" />
+    <ClInclude Include="Source\RayTrace\Primitives\cylinder.h" />
+    <ClInclude Include="Source\RayTrace\Primitives\objectbase.h" />
+    <ClInclude Include="Source\RayTrace\Primitives\plane.h" />
+    <ClInclude Include="Source\RayTrace\Primitives\sphere.h" />
+    <ClInclude Include="Source\RayTrace\Lights\pointlight.h" />
+    <ClInclude Include="Source\RayTrace\ray.h" />
+    <ClInclude Include="Source\RayTrace\RayMarch\cube.h" />
+    <ClInclude Include="Source\RayTrace\RayMarch\raymarchbase.h" />
+    <ClInclude Include="Source\RayTrace\RayMarch\sdf.h" />
+    <ClInclude Include="Source\RayTrace\RayMarch\sphere.h" />
+    <ClInclude Include="Source\RayTrace\RayMarch\torus.h" />
+    <ClInclude Include="Source\RayTrace\Scenes\example_scene.h" />
+    <ClInclude Include="Source\RayTrace\Scenes\scene.h" />
+    <ClInclude Include="Source\RayTrace\Textures\basicnoise.h" />
+    <ClInclude Include="Source\RayTrace\Textures\basicvaluenoise.h" />
+    <ClInclude Include="Source\RayTrace\Textures\checker.h" />
+    <ClInclude Include="Source\RayTrace\Textures\colormap.h" />
+    <ClInclude Include="Source\RayTrace\Textures\flat.h" />
+    <ClInclude Include="Source\RayTrace\Textures\gradient.h" />
+    <ClInclude Include="Source\RayTrace\Textures\marble.h" />
+    <ClInclude Include="Source\RayTrace\Textures\stone1.h" />
+    <ClInclude Include="Source\RayTrace\Textures\texturebase.h" />
+    <ClInclude Include="Source\RayTrace\Textures\t_image.h" />
+    <ClInclude Include="Source\RayTrace\utils.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\CApp.cpp" />
+    <ClCompile Include="Source\RayTrace\camera.cpp" />
+    <ClCompile Include="Source\RayTrace\geotransform.cpp" />
+    <ClCompile Include="Source\RayTrace\image.cpp" />
+    <ClCompile Include="Source\main.cpp" />
+    <ClCompile Include="Source\RayTrace\Lights\lightbase.cpp" />
+    <ClCompile Include="Source\RayTrace\Materials\materialbase.cpp" />
+    <ClCompile Include="Source\RayTrace\Materials\simplematerial.cpp" />
+    <ClCompile Include="Source\RayTrace\Materials\simplerefractive.cpp" />
+    <ClCompile Include="Source\RayTrace\Noise\grdnoisegenerator.cpp" />
+    <ClCompile Include="Source\RayTrace\Noise\noisebase.cpp" />
+    <ClCompile Include="Source\RayTrace\Noise\valnoisegenerator.cpp" />
+    <ClCompile Include="Source\RayTrace\Normals\constant.cpp" />
+    <ClCompile Include="Source\RayTrace\Normals\n_image.cpp" />
+    <ClCompile Include="Source\RayTrace\Normals\normalbase.cpp" />
+    <ClCompile Include="Source\RayTrace\Normals\simplerough.cpp" />
+    <ClCompile Include="Source\RayTrace\Normals\texturenormal.cpp" />
+    <ClCompile Include="Source\RayTrace\Primitives\box.cpp" />
+    <ClCompile Include="Source\RayTrace\Primitives\compositebase.cpp" />
+    <ClCompile Include="Source\RayTrace\Primitives\cone.cpp" />
+    <ClCompile Include="Source\RayTrace\Primitives\cylinder.cpp" />
+    <ClCompile Include="Source\RayTrace\Primitives\objectbase.cpp" />
+    <ClCompile Include="Source\RayTrace\Primitives\plane.cpp" />
+    <ClCompile Include="Source\RayTrace\Primitives\sphere.cpp" />
+    <ClCompile Include="Source\RayTrace\Lights\pointlight.cpp" />
+    <ClCompile Include="Source\RayTrace\ray.cpp" />
+    <ClCompile Include="Source\RayTrace\RayMarch\cube.cpp" />
+    <ClCompile Include="Source\RayTrace\RayMarch\raymarchbase.cpp" />
+    <ClCompile Include="Source\RayTrace\RayMarch\sdf.cpp" />
+    <ClCompile Include="Source\RayTrace\RayMarch\sphere.cpp" />
+    <ClCompile Include="Source\RayTrace\RayMarch\torus.cpp" />
+    <ClCompile Include="Source\RayTrace\Scenes\example_scene.cpp" />
+    <ClCompile Include="Source\RayTrace\Scenes\scene.cpp" />
+    <ClCompile Include="Source\RayTrace\Textures\basicnoise.cpp" />
+    <ClCompile Include="Source\RayTrace\Textures\basicvaluenoise.cpp" />
+    <ClCompile Include="Source\RayTrace\Textures\checker.cpp" />
+    <ClCompile Include="Source\RayTrace\Textures\colormap.cpp" />
+    <ClCompile Include="Source\RayTrace\Textures\flat.cpp" />
+    <ClCompile Include="Source\RayTrace\Textures\gradient.cpp" />
+    <ClCompile Include="Source\RayTrace\Textures\marble.cpp" />
+    <ClCompile Include="Source\RayTrace\Textures\stone1.cpp" />
+    <ClCompile Include="Source\RayTrace\Textures\texturebase.cpp" />
+    <ClCompile Include="Source\RayTrace\Textures\t_image.cpp" />
+    <ClCompile Include="Source\RayTrace\utils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Source\RayTrace\Textures\t1.bmp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
