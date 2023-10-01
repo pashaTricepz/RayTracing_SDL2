@@ -1,0 +1,6 @@
+[submodule "Dep/SDL2"]
+	path = Dep/SDL2
+	url = https://github.com/libsdl-org/SDL.git
+[submodule "Dep/glm"]
+	path = Dep/glm
+	url = https://github.com/g-truc/glm.git
